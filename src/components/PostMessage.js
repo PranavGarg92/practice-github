@@ -1,16 +1,16 @@
 import React from "react";
 import "./PostMessage.css";
 
-const PostMessage = ({ postmessage, setPostMessage }) => {
+const PostMessage = ({ message, setMessage }) => {
   return (
-    <div className="PostMessage">
+    <>
       <input
         type="text"
-        value={postmessage}
-        placeholder="text..."
-        onChange={(e) => setPostMessage(e.target.value)}
+        value={message}
+        placeholder="text.."
+        onChange={(e) => setMessage(e.target.value)}
       />
-    </div>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Gif from "./Gif";
 import "./Gifs.css";
 
-const Gifs = () => {
+const Gifs = ({ gifis, setgifis }) => {
   const [search, setSearch] = useState("");
   const [gifs, setGifs] = useState([]);
 
@@ -44,7 +44,7 @@ const Gifs = () => {
         </button>
         <div>
           {gifs.map((item) => {
-            return <Gif item={item} />;
+            return <Gif item={item} gifis={gifis} setgifis={setgifis} />;
           })}
         </div>
       </div>

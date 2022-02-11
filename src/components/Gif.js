@@ -1,14 +1,10 @@
 import React from "react";
 import "./Gif.css";
 
-const Gif = ({ item, showGif, setShowGif }) => {
-  const handelClick = ({ item, setShowGif }) => {
-    setShowGif(setShowGif);
-  };
-
+const Gif = ({ item, gifis, setgifis }) => {
   return (
     <div className="Gif">
-      <img src={item} alt="err" onClick={() => handelClick(item, setShowGif)} />
+      <img src={item} alt="err" onClick={() => setgifis(item)} />
     </div>
   );
 };

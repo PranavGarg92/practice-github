@@ -1,3 +1,18 @@
 .App {
   text-align: center;
+  display: flex;
+}
+
+.input {
+  flex: 1;
+}
+
+.show {
+  flex: 1;
+  border: 10px solid black;
+  height: 400px;
+}
+
+.posts {
+  border: 10px solid red;
 }
