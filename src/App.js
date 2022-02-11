@@ -4,17 +4,18 @@ import PostMessage from "./components/PostMessage";
 import { useState } from "react";
 
 function App() {
-  const [post, setPost] = useState({ pmeg: "", pgif: "" });
+  const [post, setPost] = useState([]);
   const [message, setMessage] = useState("");
   const [gifis, setgifis] = useState("");
 
-  const handleClick = ({ gifis, message, post, setPost }) => {
-    const newPost = { pmeg: message, pgif: gifis };
-    setPost([...post, newPost]);
+  const handleClick = () => {
+    const newPost = { pmes: message, pgif: gifis };
+    setPost((prev) => [...prev, newPost]);
     setMessage("");
     setgifis("");
   };
 
+  console.log(post);
   return (
     <div className="App">
       <div className="input">
@@ -25,12 +26,18 @@ function App() {
         <h2>{message}</h2>
         <img src={gifis} alt="" />
         <div>
-          <button
-            onClick={() => handleClick({ gifis, message, post, setPost })}
-          >
-            Post
-          </button>
+          <button onClick={handleClick}>Post</button>
         </div>
+      </div>
+      <div className="postshow">
+        {post.map((item) => {
+          return (
+            <>
+              <h2>{item.pmes}</h2>
+              <img src={item.pgif} alt="" />
+            </>
+          );
+        })}
       </div>
     </div>
   );
