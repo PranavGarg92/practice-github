@@ -1,7 +1,12 @@
 import "./App.css";
+import Gifs from "./components/Gifs";
 
 function App() {
-  return <div className="App"> Pranshu 92</div>;
+  return (
+    <div className="App">
+      <Gifs />
+    </div>
+  );
 }
 
 export default App;
