@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import Gif from "./Gif";
 import "./Gifs.css";
 
-const Gifs = ({ gifis, setgifis }) => {
+const Gifs = ({ gifis, setgifis, gifs, setGifs }) => {
   const [search, setSearch] = useState("");
-  const [gifs, setGifs] = useState([]);
 
   const GIPHY_API = `http://api.giphy.com/v1/gifs/search?q=${search}&api_key=Ab3yulSspzhg4RIKnkgdrhNkgHSoSSsc&limit=5`;
 
@@ -42,6 +41,8 @@ const Gifs = ({ gifis, setgifis }) => {
         <button className="btn" onClick={searchGif}>
           Search
         </button>
+
+        <p>click on gif to select</p>
         <div>
           {gifs.map((item) => {
             return <Gif item={item} gifis={gifis} setgifis={setgifis} />;
