@@ -9,7 +9,7 @@ function App() {
   const [gifis, setgifis] = useState("");
 
   const handleClick = () => {
-    const newPost = { pmes: message, pgif: gifis };
+    const newPost = { pmes: message, pgif: gifis, date: new Date() };
     setPost((prev) => [...prev, newPost]);
     setMessage("");
     setgifis("");
@@ -22,22 +22,24 @@ function App() {
         <PostMessage message={message} setMessage={setMessage} />
         <Gifs gifis={gifis} setgifis={setgifis} />
       </div>
-      <div className="show">
-        <h2>{message}</h2>
-        <img src={gifis} alt="" />
-        <div>
-          <button onClick={handleClick}>Post</button>
+      <div className="shows">
+        <div className="show">
+          <h2>{message}</h2>
+          <img src={gifis} alt="" />
+          <div>
+            <button onClick={handleClick}>Post</button>
+          </div>
         </div>
-      </div>
-      <div className="postshow">
-        {post.map((item) => {
-          return (
-            <>
-              <h2>{item.pmes}</h2>
-              <img src={item.pgif} alt="" />
-            </>
-          );
-        })}
+        <div className="postshow">
+          {post.map((item) => {
+            return (
+              <>
+                <h2>{item.pmes}</h2>
+                <img src={item.pgif} alt="" />
+              </>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

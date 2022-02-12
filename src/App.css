@@ -6,9 +6,11 @@
 .input {
   flex: 1;
 }
+.shows {
+  flex: 1;
+}
 
 .show {
-  flex: 1;
   border: 10px solid black;
   height: 400px;
 }
